@@ -96,6 +96,7 @@ router.post(
 
 
 //ROUTE 3: Get LoggedIn User details using: POST "http://localhost:6000/api/auth/getuser". Login Required
+
 router.post(
   "/getuser", fetchuser , async (req, res) => {
  try {
