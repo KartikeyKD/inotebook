@@ -19,7 +19,6 @@ const notesInitial = []
     }
    });
   const json = await response.json();
-  console.log(json)
   setNotes(json);
   }
   //Add a NOTE
@@ -53,7 +52,18 @@ const notesInitial = []
 //API call
 
 //Logic for DELETE in FE
-const deleteNote=(id)=>{
+const deleteNote=async (id)=>{
+
+  const response = await fetch(`${host}api/notes/deletenote/${id}`, {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+      "auth-token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjUxZmZiODY3NjYxMDFjMTk5Njg4Yzc3In0sImlhdCI6MTY5NjYwMTczMn0.UpXdASK7eXPfw7p-BK6IEVa7ZW4CYs37j8ntvWAamq8"
+    }, 
+  });
+
+  const json = response.json();
+
   console.log("Deleting the note with id-",id);
   const newNote = notes.filter((note)=>{return note._id!==id})
   setNotes(newNote)
