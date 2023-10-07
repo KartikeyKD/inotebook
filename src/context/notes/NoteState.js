@@ -17,7 +17,7 @@ const notesInitial = []
       "Content-Type": "application/json",
       "auth-token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjUxZmZiODY3NjYxMDFjMTk5Njg4Yzc3In0sImlhdCI6MTY5NjYwMTczMn0.UpXdASK7eXPfw7p-BK6IEVa7ZW4CYs37j8ntvWAamq8"
     }
-   });
+   },[]);
   const json1 = await response.json();
   setNotes(json1);
   }

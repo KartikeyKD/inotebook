@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import { useNavigate } from "react-router-dom";
 
-const Login = () => {
+const Login = (props) => {
 
 const [credential, setCredential] = useState({email:"", password:""})
 
@@ -20,11 +20,12 @@ const response = await fetch("http://localhost:5000/api/auth/login", {
 const json = await response.json()
 console.log(json)
 if(json.success){
+  props.showAlert("Login Successfull","success")
     //redirect and save token
     localStorage.setItem('token',json.authtoken);
     history("/");
 }else{
-    alert("invalid credentials")
+    props.showAlert("Invalid Credentials","danger")
 }
     }
 

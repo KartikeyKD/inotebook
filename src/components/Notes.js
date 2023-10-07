@@ -4,15 +4,15 @@ import Noteitem from './Noteitem';
 import Addnote from "./Addnote";
 
 
-const Notes = () => {
+const Notes = (props) => {
     const context = useContext(noteContext);
   const {notes, getNotes, editNote} = context;
   useEffect(() => {
-    // eslint-disable-next-line
-    getNotes();
+    
+    getNotes()
     // eslint-disable-next-line
   },[])
-  // eslint-disable-next-line
+  
   const ref  = useRef(null)
   const refClose  = useRef(null)
   const [note, setNote] = useState({id:"", etitle:"", edescription:"", etag:"default"})
@@ -20,6 +20,7 @@ const Notes = () => {
   const updateNote=(currentNote)=>{
  ref.current.click();
  setNote({id:currentNote._id, etitle:currentNote.title , edescription:currentNote.description, etag: currentNote.tag } )
+ 
   }
   
   const handleClick=(e)=>{
@@ -30,27 +31,9 @@ const Notes = () => {
   const onChange=(e)=>{
 setNote({...note,[e.target.name]:e.target.value})
   }
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   return (
     <>
-      <Addnote/>
+      <Addnote showAlert={props.showAlert}/>
       <button type="button" ref={ref} className="btn d-none btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
   Launch demo modal
 </button>
@@ -122,7 +105,7 @@ setNote({...note,[e.target.name]:e.target.value})
       {notes.length===0 && "No Notes To Display"}
       </div>
       {notes.map((note)=>{
-         return <Noteitem key = {note._id } updateNote = {updateNote} note={note} />
+         return <Noteitem key = {note._id } showAlert={props.showAlert} updateNote = {updateNote} note={note} />
         
       })}
       </div>
