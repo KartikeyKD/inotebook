@@ -20,6 +20,60 @@ const notesInitial = [
       "tag": "Test Note",
       "date": "2023-10-06T20:00:22.161Z",
       "__v": 0
+    },
+    {
+      "_id": "65206756dea73cbeab58260e",
+      "user": "651ffb86766101c199688c77",
+      "title": "my title",
+      "description": "my first note this is",
+      "tag": "Test Note",
+      "date": "2023-10-06T20:00:22.161Z",
+      "__v": 0
+    },
+    {
+      "_id": "65206756dea73cbeab58260e",
+      "user": "651ffb86766101c199688c77",
+      "title": "my title",
+      "description": "my first note this is",
+      "tag": "Test Note",
+      "date": "2023-10-06T20:00:22.161Z",
+      "__v": 0
+    },
+    {
+      "_id": "65206756dea73cbeab58260e",
+      "user": "651ffb86766101c199688c77",
+      "title": "my title",
+      "description": "my first note this is",
+      "tag": "Test Note",
+      "date": "2023-10-06T20:00:22.161Z",
+      "__v": 0
+    },
+    {
+      "_id": "65206756dea73cbeab58260e",
+      "user": "651ffb86766101c199688c77",
+      "title": "my title",
+      "description": "my first note this is",
+      "tag": "Test Note",
+      "date": "2023-10-06T20:00:22.161Z",
+      "__v": 0
+    },
+    {
+      "_id": "65206756dea73cbeab58260e",
+      "user": "651ffb86766101c199688c77",
+      "title": "my title",
+      "description": "my first note this is",
+      "tag": "Test Note",
+      "date": "2023-10-06T20:00:22.161Z",
+      "__v": 0
+    },
+    {
+      "_id": "65206756dea73cbeab58260e",
+      "user": "651ffb86766101c199688c77",
+      "title": "my title",
+      "description": "my first note this is",
+      "tag": "Test Note",
+      "date": "2023-10-06T20:00:22.161Z",
+      "__v": 0
     }
   ]
 
