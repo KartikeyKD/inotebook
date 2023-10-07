@@ -12,9 +12,9 @@ app.use('/api/auth', require('./routes/auth'))
 app.use('/api/notes', require('./routes/notes'))
 
 app.get('/', (req, res) => {
-  res.send('Hello iNotebook User!')
+  res.send('Hello Privy User!')
 })
 
 app.listen(port, () => {
-  console.log(`Example app listening on port http://localhost:${port}`)
+  console.log(`Privy is actively running on port http://localhost:${port}`)
 })
