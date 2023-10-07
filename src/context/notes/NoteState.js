@@ -75,14 +75,14 @@ const editNote=async (id, title, description, tag)=>{
   //API call
 
   const response = await fetch(`${host}api/notes/updatenote/${id}`, {
-    method: "POST",
+    method: "PUT",
     headers: {
       "Content-Type": "application/json",
       "auth-token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjUxZmZiODY3NjYxMDFjMTk5Njg4Yzc3In0sImlhdCI6MTY5NjYwMTczMn0.UpXdASK7eXPfw7p-BK6IEVa7ZW4CYs37j8ntvWAamq8"
     },
    body: JSON.stringify({title,description,tag}), 
   });
-  const json= response.json(); 
+  const json= await response.json(); 
 //Logic for edit in FE
 
 for (let index = 0; index < notes.length; index++) {
