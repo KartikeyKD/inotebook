@@ -9,6 +9,7 @@ const Addnote = () => {
   const handleClick=(e)=>{
     e.preventDefault();
 addNote(note.title,note.description,note.tag);
+setNote({title:"", description:"", tag:""});
   }
   const onChange=(e)=>{
 setNote({...note,[e.target.name]:e.target.value})
@@ -27,6 +28,7 @@ setNote({...note,[e.target.name]:e.target.value})
             type="text"
             className="form-control"
             id="title"
+            value={note.title}
             name="title"
             aria-describedby="emailHelp"
             onChange={onChange}
@@ -40,6 +42,7 @@ setNote({...note,[e.target.name]:e.target.value})
             type="text"
             className="form-control"
             id="description"
+            value={note.description}
             name="description"
             onChange={onChange}
           />
@@ -52,6 +55,7 @@ setNote({...note,[e.target.name]:e.target.value})
             type="text"
             className="form-control"
             id="tag"
+            value={note.tag}
             name="tag"
             onChange={onChange}
           />

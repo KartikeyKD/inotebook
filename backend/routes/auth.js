@@ -7,7 +7,7 @@ const jwt = require("jsonwebtoken");
 const fetchuser = require("../middleware/fetchuser");
 
 const JWT_SECRET = "IamGoodBoy@1";
-
+let success=false;
 //ROUTE 1: Create a User using: POST "/api/auth/createuser". No login required
 router.post(
   "/createuser",
@@ -57,7 +57,7 @@ router.post(
   }
 );
 
-//ROUTE 2: Authenticate a User using: POST "http://localhost:6000/api/auth/login". No login required
+//ROUTE 2: Authenticate a User using: POST "http://localhost:5000/api/auth/login". No login required
 
 router.post(
   "/login",
@@ -86,7 +86,8 @@ router.post(
         },
       };
       const authtoken = jwt.sign(data, JWT_SECRET);
-      res.json({ authtoken });
+      success=true;
+      res.json({success, authtoken });
     } catch (error) {
       console.error(error.message);
       res.status(500).send("Some Error occured");
@@ -95,7 +96,7 @@ router.post(
 );
 
 
-//ROUTE 3: Get LoggedIn User details using: POST "http://localhost:6000/api/auth/getuser". Login Required
+//ROUTE 3: Get LoggedIn User details using: POST "http://localhost:5000/api/auth/getuser". Login Required
 
 router.post(
   "/getuser", fetchuser , async (req, res) => {

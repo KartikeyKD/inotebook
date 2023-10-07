@@ -12,14 +12,14 @@ const notesInitial = []
     //API call
 
     const response = await fetch(`${host}api/notes/fetchallnotes`, {
-    method: "GET",
+    method: 'GET',
     headers: {
       "Content-Type": "application/json",
       "auth-token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjUxZmZiODY3NjYxMDFjMTk5Njg4Yzc3In0sImlhdCI6MTY5NjYwMTczMn0.UpXdASK7eXPfw7p-BK6IEVa7ZW4CYs37j8ntvWAamq8"
     }
    });
-  const json = await response.json();
-  setNotes(json);
+  const json1 = await response.json();
+  setNotes(json1);
   }
   //Add a NOTE
 
@@ -34,20 +34,11 @@ const notesInitial = []
     },
    body: JSON.stringify({title,description,tag}), 
   });
-  
-  //Logic for ADD in FE
-    console.log("New Note Added ")
-    const note={
-      "_id": "65206756dea73cbeab58bkn26ceger0e",
-      "user": "651ffb86766101c199688c77",
-      "title": title,
-      "description": description,
-      "tag": tag,
-      "date": "2023-10-06T20:00:22.161Z",
-      "__v": 0
-    };
+  const note = await response.json();
      setNotes(notes.concat(note))
   }
+
+
 //Delete a NOTE
 //API call
 

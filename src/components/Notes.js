@@ -8,8 +8,11 @@ const Notes = () => {
     const context = useContext(noteContext);
   const {notes, getNotes, editNote} = context;
   useEffect(() => {
-    getNotes()
-  })
+    // eslint-disable-next-line
+    getNotes();
+    // eslint-disable-next-line
+  },[])
+  // eslint-disable-next-line
   const ref  = useRef(null)
   const refClose  = useRef(null)
   const [note, setNote] = useState({id:"", etitle:"", edescription:"", etag:"default"})
@@ -115,6 +118,9 @@ setNote({...note,[e.target.name]:e.target.value})
 
     <div className="row my-3">
       <h3 >Your Notes</h3>
+      <div className="container">
+      {notes.length===0 && "No Notes To Display"}
+      </div>
       {notes.map((note)=>{
          return <Noteitem key = {note._id } updateNote = {updateNote} note={note} />
         

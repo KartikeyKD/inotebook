@@ -4,7 +4,7 @@ const router = express.Router();
 const fetchuser = require("../middleware/fetchuser");
 const { body, validationResult } = require("express-validator");
 
-//ROUTE 1: Get all the notes  using: GET "http://localhost:6000/api/notes/fetchallnotes". Login Required
+//ROUTE 1: Get all the notes  using: GET "http://localhost:5000/api/notes/fetchallnotes". Login Required
 
 router.get("/fetchallnotes", fetchuser, async (req, res) => {
     try {
@@ -17,7 +17,7 @@ router.get("/fetchallnotes", fetchuser, async (req, res) => {
 }
 });
 
-//ROUTE 2: Add notes  using: POST "http://localhost:6000/api/notes/addnote". Login Required
+//ROUTE 2: Add notes  using: POST "http://localhost:5000/api/notes/addnote". Login Required
 
 // router.post(
 //   "/addnote",
@@ -46,7 +46,7 @@ router.get("/fetchallnotes", fetchuser, async (req, res) => {
 //     res.status(500).send("Some Error occured");       
 // }
 // });
-//ROUTE 2: Add notes  using: POST "http://localhost:6000/api/notes/addnote". Login Required
+//ROUTE 2: Add notes  using: POST "http://localhost:5000/api/notes/addnote". Login Required
 router.post('/addnote', fetchuser, [
     body('title', 'Enter a valid title').isLength({ min: 3 }),
     body('description', 'Description must be atleast 5 characters').isLength({ min: 5 }),], async (req, res) => {
@@ -73,7 +73,7 @@ router.post('/addnote', fetchuser, [
     })
 
 
-//ROUTE 3: Update notes  using: PUT "http://localhost:6000/api/notes/updatenote". Login Required
+//ROUTE 3: Update notes  using: PUT "http://localhost:5000/api/notes/updatenote". Login Required
 router.put('/updatenote/:id', fetchuser, async (req,res)=>{
      const {title, description, tag} = req.body;
     //creating a newNote object 
@@ -94,7 +94,7 @@ res.json({note});
 
     });
 
-//ROUTE 4: Deleting notes  using: DELETE "http://localhost:6000/api/notes/deletenote". Login Required
+//ROUTE 4: Deleting notes  using: DELETE "http://localhost:5000/api/notes/deletenote". Login Required
 
 router.delete('/deletenote/:id', fetchuser, async (req,res)=>{
      const {title, description, tag} = req.body;
