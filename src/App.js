@@ -25,6 +25,10 @@ function App() {
       setAlert(null);
     }, 1500);
   };
+
+
+  
+
   return (
     <>
     <NoteState>

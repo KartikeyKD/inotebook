@@ -1,12 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link,useLocation } from 'react-router-dom'
 
 
- 
+// const btntext="Login";
 
-const Navbar = () => {
+
+const Navbar = (props) => {
   let location = useLocation();
+  const [btntext, setText] = useState("Login");
   return (
+    
        <nav className="navbar navbar-expand-lg bg-dark navbar-dark">
     <div className="container-fluid">
       <Link className="navbar-brand" to="/"><img src="./logo256.png" alt="" style={{height:"30px"}}/>Privy</Link>
@@ -23,7 +26,7 @@ const Navbar = () => {
           </li>
         </ul>
         <form className="d-flex" role="search">
-         <Link className="btn btn-primary mx-2" to="/login"  role="button">Login</Link>
+         <Link className="btn btn-primary mx-2" to="/login"  role="button">{btntext}</Link>
         <Link className="btn btn-primary" to="/signup" role="button">SignUp</Link>
         </form>
       </div>
