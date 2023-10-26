@@ -1,3 +1,4 @@
 {
-    "audioCues.lineHasError": "off"
+    "audioCues.lineHasError": "off",
+    "terminal.integrated.splitCwd": "inherited"
 }
